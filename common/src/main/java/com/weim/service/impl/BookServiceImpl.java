@@ -1,5 +1,6 @@
 package com.weim.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.weim.entity.Book;
 import com.weim.entity.Title;
 import com.weim.repository.BookRepository;
@@ -37,6 +38,8 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book saveBook(Book book) {
+
+        System.out.println("book = " + JSON.toJSONString(book));
 
         //保存的时候  首先根据书名查找  没有则保存 有则更新
         Book bookTemp = bookRepository.findByTitle(book.getTitle());

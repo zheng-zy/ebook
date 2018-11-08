@@ -37,7 +37,7 @@ public class JsoupUtils {
     public static String getHtmlString(String url, String charsetName, String filterKey) throws IOException {
 
         //设置时间5s
-        Connection connect = Jsoup.connect(url).timeout(5000);
+        Connection connect = Jsoup.connect(url).timeout(60000);
         connect.headers(getHeaders());
 
         Connection.Response response = connect.execute();
