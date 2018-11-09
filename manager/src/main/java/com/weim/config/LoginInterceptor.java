@@ -25,7 +25,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        request.getSession().setAttribute("name", "test");
+        request.getSession().setAttribute("name", "1");
+        request.getSession().setAttribute("password", "1");
 
         //没有session 跳转到登录页面
         if(request.getSession().getAttribute("name") == null) {
